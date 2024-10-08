@@ -25,27 +25,33 @@ final ThemeData lightTheme = ThemeData(
       onSurface: Appcolors.lightDivColor),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
+        fontFamily: 'interSemiBold',
         fontSize: 24.sp,
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
     headlineMedium: TextStyle(
+        fontFamily: 'interMedium',
         fontSize: 20.sp,
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
     headlineSmall: TextStyle(
         fontSize: 15.sp,
+        fontFamily: 'interMedium',
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
     bodyLarge: TextStyle(
         fontSize: 17.sp,
+        fontFamily: 'interMedium',
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
     bodySmall: TextStyle(
         fontSize: 16.sp,
+        fontFamily: 'interRegular',
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
     labelSmall: TextStyle(
         fontSize: 13.sp,
+        fontFamily: 'interRegular',
         color: Appcolors.lightFontColor,
         fontWeight: FontWeight.w600),
   ),
@@ -74,26 +80,32 @@ final ThemeData darkTheme = ThemeData(
   textTheme: TextTheme(
     headlineLarge: TextStyle(
         fontSize: 24.sp,
+        fontFamily: 'interSemiBold',
         color: Appcolors.darkFontColor,
         fontWeight: FontWeight.w600),
     headlineMedium: TextStyle(
         fontSize: 20.sp,
+        fontFamily: 'interMedium',
         color: Appcolors.darkFontColor,
         fontWeight: FontWeight.w600),
     headlineSmall: TextStyle(
         fontSize: 15.sp,
-        color: Appcolors.darkFontColor,
+        fontFamily: 'interMedium',
+        color: Appcolors.darkLabelColor,
         fontWeight: FontWeight.w600),
     bodyLarge: TextStyle(
         fontSize: 17.sp,
+        fontFamily: 'interMedium',
         color: Appcolors.darkFontColor,
         fontWeight: FontWeight.w600),
     bodySmall: TextStyle(
         fontSize: 16.sp,
+        fontFamily: 'interMedium',
         color: Appcolors.darkFontColor,
         fontWeight: FontWeight.w600),
     labelSmall: TextStyle(
         fontSize: 13.sp,
+        fontFamily: 'interRegular',
         color: Appcolors.darkFontColor,
         fontWeight: FontWeight.w600),
   ),

@@ -148,7 +148,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:news_app/features/home/homepage.dart';
+import 'package:news_app/features/home/view/homepage.dart';
 import 'package:news_app/utils/theme.dart';
 
 void main() {
