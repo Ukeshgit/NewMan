@@ -1,0 +1,46 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.news_app"
+    compileSdk = 34 // Provide a default value in case it's null
+    ndkVersion = "34"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.news_app"
+        // Set minSdkVersion to 24 as required by the plugin
+        minSdk = 24 // <-- Updated this line
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug // TODO: Add your own signing config for the release build.
+        }
+    }
+}
+
+dependencies {
+    implementation "us.zoom.videosdk:zoomvideosdk-core:1.11.2"
+    implementation "us.zoom.videosdk:zoomvideosdk-videoeffects:1.11.2"
+    implementation "us.zoom.videosdk:zoomvideosdk-annotation:1.11.2"
+}  \
+
+flutter {
+    source = "../.."
+}
