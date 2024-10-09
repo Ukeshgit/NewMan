@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:news_app/common/widgets/news_widget.dart';
 import 'package:news_app/common/widgets/newstile.dart';
+import 'package:news_app/features/home/controller/bottom_navigation_controller.dart';
 import 'package:news_app/features/home/controller/news_for_you_controller.dart';
 import 'package:news_app/features/home/controller/trending_news_controller.dart';
 import 'package:news_app/utils/colors.dart';
@@ -13,6 +14,8 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BottomNavigationController bottomNavigationController =
+        Get.put(BottomNavigationController());
     ThemeController controller = Get.put(ThemeController());
     TrendingNewsController trendingNewsController =
         Get.put(TrendingNewsController());
@@ -20,6 +23,89 @@ class Homepage extends StatelessWidget {
     ;
 
     return Scaffold(
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(99.sp),
+                color: Theme.of(context).colorScheme.primary),
+            width: 180.w,
+            height: 60.h,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Obx(() {
+                  return GestureDetector(
+                    onTap: () {
+                      bottomNavigationController.index.value = 0;
+                    },
+                    child: Container(
+                      height: 40.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                          color: bottomNavigationController.index.value == 0
+                              ? Appcolors.darkPrimaryColor
+                              : null,
+                          borderRadius: BorderRadius.circular(100.sp)),
+                      child: Icon(
+                        Icons.home,
+                        color: bottomNavigationController.index.value == 0
+                            ? Appcolors.darkLabelColor
+                            : null,
+                      ),
+                    ),
+                  );
+                }),
+                Obx(() {
+                  return GestureDetector(
+                    onTap: () {
+                      bottomNavigationController.index.value = 1;
+                    },
+                    child: Container(
+                      height: 40.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                          color: bottomNavigationController.index.value == 1
+                              ? Appcolors.darkPrimaryColor
+                              : null,
+                          borderRadius: BorderRadius.circular(100.sp)),
+                      child: Icon(
+                        Icons.book,
+                        color: bottomNavigationController.index.value == 1
+                            ? Appcolors.darkLabelColor
+                            : null,
+                      ),
+                    ),
+                  );
+                }),
+                Obx(() {
+                  return GestureDetector(
+                    onTap: () {
+                      bottomNavigationController.index.value = 2;
+                    },
+                    child: Container(
+                      height: 40.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                          color: bottomNavigationController.index.value == 2
+                              ? Appcolors.darkPrimaryColor
+                              : null,
+                          borderRadius: BorderRadius.circular(100.sp)),
+                      child: Icon(
+                        Icons.settings,
+                        color: bottomNavigationController.index.value == 2
+                            ? Appcolors.darkLabelColor
+                            : null,
+                      ),
+                    ),
+                  );
+                }),
+              ],
+            ),
+          )
+        ],
+      ),
       backgroundColor: Theme.of(context).colorScheme.error,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
